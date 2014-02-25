@@ -1,0 +1,57 @@
+
+
+
+
+
+
+
+
+<% if current_user %>
+   
+   <div class="panel">
+
+   <div class="panel">
+  <h5>Latest Bookmarks</h5>
+  </div>
+
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th>Bookmark Title</th>
+      </tr>
+    </thead>
+ 
+    <tbody>
+      <% @bookmarks.each do |bookmark| %>
+        <tr>
+          <td><%= link_to bookmark.title, bookmark.url %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+    </div>
+ 
+<% else %>
+  <div class="panel">
+    <h3>Bookmark Pocket - Save your bookmarks</h3>
+    <p>A simple app to collect all your bookmarks at one place.</p>
+    <%= link_to "Get started today", new_user_registration_path, :class => "button button-large" %>
+ <hr>
+    <h3>Features </h3>
+    <ul>
+      <li>Add Bookmarks</li>
+      <li>Edit saved Bookmarks</li>
+      <li>User based Bookmarks Collection</li>
+    </ul>  
+    
+  <hr>
+    <h3>About </h3>
+      <p>App developed by  Maninder Pal Singh</a> as a begineer to understand Ruby on Rails. Check the source code on <a href="https://github.com/msimar/BookmarkPocket" target="_blank">GitHub</a>. 
+    </p>
+  </div>
+ 
+ 
+ 
+   
+<% end %>
